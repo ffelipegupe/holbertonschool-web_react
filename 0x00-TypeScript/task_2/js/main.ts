@@ -27,15 +27,18 @@ export function createEmployee(salary: number | string): Director | Teacher {
 	return new Director();
 }
 
-export function isDirector(employee: Director | Teacher): employee is Director {
-    return (employee instanceof Director) ? true : false;
+export function isDirector(employee: DirectorsInterface | TeacherInterface): employee is Director {
+	return employee instanceof Director;
 }
 
-export function executeWork(employee: Director | Teacher): string {
-    return isDirector(employee) ? employee.workDirectorTasks() : employee.workTeacherTasks();
+export function executeWork(employee: DirectorsInterface | TeacherInterface): string {
+	if (isDirector(employee)) return employee.workDirectorTasks();
+	else return employee.workTeacherTasks();
 }
 
-type Subjects = 'Math' | 'History';
+export type Subjects = 'Math' | 'History';
+
 export function teachClass(todayClass: Subjects): string {
-    return todayClass === 'Math' ? 'Teaching Math' : 'Teaching History';
+        if (todayClass === 'Math') return 'Teaching Math';
+        else if (todayClass === 'History') return 'Teaching History';
 }
