@@ -30,15 +30,13 @@ interface Teacher {
     fullTimeEmployee: true,
     numberOfReports: 17,
   };
-  console.log(director1);
-  
+    
   // returns a Teacher's name in this format: S. Cheung
   function printTeacher(firstName: string, lastName: string): string {
     return `${firstName[0]}. ${lastName}`;
   }
   
-  console.log(printTeacher('Dora', 'Montero'));
-  
+   
   // class description interface
   interface classInterface {
     firstName: string;
@@ -75,4 +73,3 @@ interface Teacher {
   const studentClass: StudentClass = new StudentClass('sofia', 'cheung');
   console.log(studentClass.displayName());
   console.log(studentClass.workOnHomework());
-  
