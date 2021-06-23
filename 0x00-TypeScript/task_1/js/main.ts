@@ -52,7 +52,7 @@ export interface classConstructor {
   }
   
 // Creating class and constructor through interfaces 
-class StudentClass implements classInterface {
+export class StudentClass implements classInterface {
     firstName: string;
     lastName: string;
   
