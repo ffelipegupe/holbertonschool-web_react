@@ -51,21 +51,27 @@ export interface classConstructor {
     new (firstName: string, lastName: string): classInterface;
   }
   
-// Creating class and constructor through interfaces 
-export class StudentClass implements classInterface {
-    firstName: string;
-    lastName: string;
-  
-    constructor(firstName: string, lastName: string) {
-      this.firstName = firstName;
-      this.lastName = lastName;
-    }
-  
-    workOnHomework(): string {
-      return 'Currently working';
-    }
-  
-    displayName(): string {
-      return this.firstName;
-    }
-  }
+// Creating Student class
+export const StudentClass: StudentConstructor = class StudentClass implements StudentClassInterface {
+	firstName: string;
+	lastName: string;
+
+	constructor(firstName: string, lastName: string) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+
+	workOnHomework() { return 'Currently working'; }
+	displayName() { return this.firstName; }
+}
+
+export interface StudentClassInterface {
+	readonly firstName: string;
+	readonly lastName: string;
+	workOnHomework(): string;
+	displayName(): string;
+}
+
+export interface StudentConstructor {
+	new(firstName: string, lastName: string): StudentClassInterface;
+}
