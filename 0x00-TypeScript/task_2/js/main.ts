@@ -23,17 +23,17 @@ export class Teacher implements TeacherInterface {
 }
 
 export function createEmployee(salary: number | string): Director | Teacher {
-	if (typeof salary === 'number' && salary < 500) return new Teacher();
-	return new Director();
+        if (typeof salary === 'number' && salary < 500) return new Teacher();
+        return new Director();
 }
 
 export function isDirector(employee: DirectorsInterface | TeacherInterface): employee is Director {
-	return employee instanceof Director;
+        return employee instanceof Director;
 }
 
 export function executeWork(employee: DirectorsInterface | TeacherInterface): string {
-	if (isDirector(employee)) return employee.workDirectorTasks();
-	else return employee.workTeacherTasks();
+        if (isDirector(employee)) return employee.workDirectorTasks();
+        else return employee.workTeacherTasks();
 }
 
 export type Subjects = 'Math' | 'History';
