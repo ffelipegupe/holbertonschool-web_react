@@ -29,28 +29,30 @@ interface Teacher {
     fullTimeEmployee: true,
     numberOfReports: 17,
   };
-    
-  // Returns the first letter of the firstName and the full lastName
-  function printTeacher(firstName: string, lastName: string): string {
-    return `${firstName[0]}. ${lastName}`;
-  }
+
+export interface printTeacherFunction {
+	(firstName: string, lastName: string): string;
+}
+
+export const printTeacher: printTeacherFunction = function (firstName: string, lastName: string): string {
+	return `${firstName[0]}. ${lastName}`;
+}
   
-   
-  // class description interface
-  interface classInterface {
+// class description interface
+interface classInterface {
     firstName: string;
     lastName: string;
     workOnHomework(): string;
     displayName(): string;
   }
   
-  // constructor description interface
-  interface classConstructor {
+// constructor description interface
+interface classConstructor {
     new (firstName: string, lastName: string): classInterface;
   }
   
-  // Creating class and constructor through interfaces 
-  class StudentClass implements classInterface {
+// Creating class and constructor through interfaces 
+class StudentClass implements classInterface {
     firstName: string;
     lastName: string;
   
