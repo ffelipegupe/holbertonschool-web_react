@@ -22,9 +22,9 @@ export class Teacher implements TeacherInterface {
 	    workTeacherTasks() { return 'Getting to work'; }
 }
 
-export function createEmployee(firstName: string, lastName: string, salary: number | string): Director | Teacher {
-    if (salary as number && salary < 500) return new Teacher();
-    else return new Director();
+export function createEmployee(salary: number | string): Director | Teacher {
+	if (typeof salary === 'number' && salary < 500) return new Teacher();
+	return new Director();
 }
 
 export function isDirector(employee: Director | Teacher): employee is Director {
