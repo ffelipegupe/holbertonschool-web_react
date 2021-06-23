@@ -21,8 +21,7 @@ interface Teacher {
     location: 'London',
     contract: false,
   };
-  console.log(teacher3);
-  
+    
   const director1: Directors = {
     firstName: 'John',
     lastName: 'Doe',
@@ -31,7 +30,7 @@ interface Teacher {
     numberOfReports: 17,
   };
     
-  // returns a Teacher's name in this format: S. Cheung
+  // Returns the first letter of the firstName and the full lastName
   function printTeacher(firstName: string, lastName: string): string {
     return `${firstName[0]}. ${lastName}`;
   }
@@ -68,8 +67,3 @@ interface Teacher {
       return this.firstName;
     }
   }
-  
-  // creating instance of StudentClass
-  const studentClass: StudentClass = new StudentClass('sofia', 'cheung');
-  console.log(studentClass.displayName());
-  console.log(studentClass.workOnHomework());
