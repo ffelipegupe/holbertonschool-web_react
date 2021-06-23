@@ -39,7 +39,7 @@ export const printTeacher: printTeacherFunction = function (firstName: string, l
 }
   
 // class description interface
-interface classInterface {
+export interface classInterface {
     firstName: string;
     lastName: string;
     workOnHomework(): string;
@@ -47,7 +47,7 @@ interface classInterface {
   }
   
 // constructor description interface
-interface classConstructor {
+export interface classConstructor {
     new (firstName: string, lastName: string): classInterface;
   }
   
