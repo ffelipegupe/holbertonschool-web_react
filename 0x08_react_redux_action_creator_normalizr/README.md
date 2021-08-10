@@ -9,4 +9,3 @@
 - Redux action creators
 - async actions in Redux
 - how to write tests for Redux
-
